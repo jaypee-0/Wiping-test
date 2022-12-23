@@ -36,7 +36,7 @@ export default function CreateAccount({ route, navigation }: any) {
     }
     return (
         <SafeAreaView style={tw`h-[100%] px-6 text-black flex flex-col bg-[#fff] pt-[${Constants.statusBarHeight}]`}>
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <TouchableOpacity onPress={() => navigation.goBack()} style={tw`mb-8 mr-auto rounded-[16px] items-center`}>
                     <AntDesign name="arrowleft" size={30} color="#3E3E3E" />
                 </TouchableOpacity>
