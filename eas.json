@@ -25,7 +25,9 @@
         "gradleCommand": ":app:assembleDebug"
       }
     },
-    "production": {}
+    "production": {
+      "channel": "production"
+    }
   },
   "submit": {
     "production": {}
