@@ -7,23 +7,28 @@
       "developmentClient": true,
       "distribution": "internal",
       "ios": {
-        "simulator": true
-      }
+        "simulator": true,
+        "enterpriseProvisioning": "universal"
+      },
+      "channel": "development"
     },
     "preview-ios": {
       "distribution": "internal",
-      "developmentClient": true      
+      "developmentClient": true,
+      "channel": "preview-ios"
     },
     "preview": {
       "distribution": "internal",
       "android": {
         "buildType": "apk"
-      }
+      },
+      "channel": "preview"
     },
     "preview2": {
       "android": {
         "gradleCommand": ":app:assembleDebug"
-      }
+      },
+      "channel": "preview2"
     },
     "production": {
       "channel": "production"

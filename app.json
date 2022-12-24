@@ -1,7 +1,9 @@
 {
   "expo": {
     "name": "wiping-test",
+    "description": "Wiping react native test",
     "slug": "wiping-test",
+    "privacy": "public",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -13,7 +15,8 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/bb6ba333-9985-4fe5-b2db-aee0424e340a"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -36,6 +39,9 @@
       "eas": {
         "projectId": "bb6ba333-9985-4fe5-b2db-aee0424e340a"
       }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
     }
   }
 }
