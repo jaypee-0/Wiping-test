@@ -145,8 +145,7 @@ export default function CreateAccount({ route, navigation }: any) {
                                 setpassword(text);
                             }}
                             value={password}
-                            placeholderTextColor="#35377B"
-                            autoFocus
+                            placeholderTextColor="#35377B"                            
                             secureTextEntry={showPassword}
                         />
 
@@ -162,8 +161,7 @@ export default function CreateAccount({ route, navigation }: any) {
                                 setcpassword(text);
                             }}
                             value={cpassword}
-                            placeholderTextColor="#35377B"
-                            autoFocus
+                            placeholderTextColor="#35377B"                            
                             secureTextEntry={showPassword}
                         />
 

@@ -99,8 +99,7 @@ const Chat = ({route}:any) => {
                             setsearch(text);
                         }}
                         value={search}
-                        placeholderTextColor="#2F80ED60"
-                        autoFocus
+                        placeholderTextColor="#2F80ED60"                        
                         placeholder="Search friend by name"
                     />
                 </View>

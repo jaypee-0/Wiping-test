@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, Image, TextInput } from "react-native";
+import { Keyboard, Text, View, Image, TextInput } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native-gesture-handler";
@@ -14,7 +14,7 @@ const ChatA = ({route}:any) => {
   
   console.log(name, "Jaypee")
     return (
-        <SafeAreaView style={tw`h-[100%] bg-white text-black flex flex-col `}>
+        <SafeAreaView style={tw`h-[100%] bg-white text-black flex flex-col`}>
         {/* <SafeAreaView style={tw`h-[100%] bg-white text-black flex flex-col pt-[${Constants.statusBarHeight}]`}> */}
             <View style={tw`flex flex-row justify-between items-center bg-white w-full px-6 py-3`}>
                 <View style={tw`flex flex-row items-center`}>
@@ -57,7 +57,6 @@ const ChatA = ({route}:any) => {
                         }}
                         value={message}
                         placeholderTextColor="#00000040"
-                        autoFocus
                         placeholder="Type your message"
                     />
                     <View style={tw``}>
