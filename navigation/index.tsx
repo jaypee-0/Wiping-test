@@ -5,6 +5,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { CardStyleInterpolators } from '@react-navigation/stack';
 import * as React from 'react';
 import { ColorSchemeName, Image, Pressable } from 'react-native';
+import ChatIcon from '../components/icons/ChatIcon';
+import DiscoverIcon from '../components/icons/DiscoverIcon';
+import NearByIcon from '../components/icons/NearByIcon';
+import RingAllIcon from '../components/icons/RingAllIcon';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
@@ -17,6 +21,8 @@ import RingAll from '../screens/Main/RingAll';
 import TabOneScreen from '../screens/TabOneScreen';
 import { RootStackParamList, RootTabParamList, RootTabScreenProps } from '../types';
 import LinkingConfiguration from './LinkingConfiguration';
+import tw from "twrnc";
+
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
   return (
@@ -50,7 +56,7 @@ function BottomTabNavigator() {
           headerShown: false,
           tabBarLabel: 'Discover',
           tabBarIcon: ({ color, focused }) => (
-            <Image source={require('../assets/TabIcons/chat.svg')} resizeMode="contain" />
+            <DiscoverIcon focused={focused} />
             ),
           }}
       />
@@ -60,7 +66,7 @@ function BottomTabNavigator() {
         options={{
           headerShown: false,
           tabBarIcon: ({ color, focused }) => (
-            <Image source={require('../assets/TabIcons/chat.svg')} resizeMode="contain" />
+            <NearByIcon focused={focused} />
           ),
         }}
       />
@@ -70,7 +76,7 @@ function BottomTabNavigator() {
         options={{
           headerShown: false,
           tabBarIcon: ({ color, focused }) => (
-            <Image source={require('../assets/TabIcons/chat.svg')} resizeMode="contain" />
+            <RingAllIcon focused={focused} />
           ),
         }}
       />
@@ -80,7 +86,7 @@ function BottomTabNavigator() {
         options={{
           headerShown: false,
           tabBarIcon: ({ color, focused }) => (
-            <Image source={require('../assets/TabIcons/chat.svg')} resizeMode="contain" />
+            <ChatIcon focused={focused} />
           ),
         }}
       />
@@ -90,7 +96,7 @@ function BottomTabNavigator() {
         options={{
           headerShown: false,
           tabBarIcon: ({ color, focused }) => (
-            <Image source={require('../assets/TabIcons/chat.svg')} resizeMode="contain" />
+            <Image source={require('../assets/persons/person1.png')} style={tw`h-[29px] w-[29px] rounded-full border-[3px] border-[${focused ? '#2F80ED' : '#8D8E96'}`} resizeMode="contain" />
           ),
         }}
       />
@@ -113,8 +119,7 @@ function RootNavigator() {
         name="BottomTabs"
         component={BottomTabNavigator}
         options={{
-          headerShown: false,
-          //cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS ,       
+          headerShown: false,     
         }}
       />
       <Stack.Screen
