@@ -96,7 +96,7 @@ function BottomTabNavigator() {
         options={{
           headerShown: false,
           tabBarIcon: ({ color, focused }) => (
-            <Image source={require('../assets/persons/person1.png')} style={tw`h-[29px] w-[29px] rounded-full border-[3px] border-[${focused ? '#2F80ED' : '#8D8E96'}`} resizeMode="contain" />
+            <Image source={require('../assets/persons/person1.png')} style={tw`h-[29px] w-[29px] rounded-full border-[2px] border-[${focused ? '#2F80ED' : '#8D8E96'}]`} resizeMode="contain" />
           ),
         }}
       />
