@@ -7,6 +7,7 @@ import Constants from "expo-constants";
 import tw from "twrnc";
 import React from "react";
 import Matches from "../../components/Matches";
+import LockIcon from "../../components/icons/LockIcon";
 
 const Chat = ({route}:any) => {
     const navigation = useNavigation();
@@ -83,6 +84,24 @@ const Chat = ({route}:any) => {
             today: true
         },
     ];
+    const [page, setpage] = React.useState<string>("Chats");
+    // function Render() {
+    //   switch (page) {
+    //     case "Chats":
+    //       return <Chats />;
+    //     case "Request":
+    //       return <Request />;
+    //     default:
+    //       return <Chats />;
+    //   }
+    // }
+    const active = (data: any) => {
+        if (page === data) {
+          return setpage(data);
+        }
+        setpage(data);
+      };
+
     return (
         <SafeAreaView style={tw`h-[100%] px-6 bg-[#F5F5F5] flex flex-col pt-[${Constants.statusBarHeight}]`}>
             <View style={tw`flex flex-row mb-8 mx-auto`}>
@@ -110,8 +129,15 @@ const Chat = ({route}:any) => {
             </View>
             <Matches data={data} />
 
+            <View  style={[styles.flightHeaderContainer]}>
+              {["Chats", <View style={tw`flex flex-row items-center mb-0`}><Text style={tw`mr-1 mb-0 font-bold text-[${page !== 'Chats' ? '#2F80ED' : '#E0E0E0'}]`}>Requests</Text><LockIcon/></View>].map((data, index) => (
+                <Text style={[page === data ? styles.flightHeader : styles.flightNormal]} onPress={() => active(data)} key={index}>
+                  {data}
+                </Text>
+            ))}
+            </View>
+
             <ScrollView style={tw`flex flex-col mt-2`} showsVerticalScrollIndicator={false}>
-                    
             <Text style={tw`mt-2 font-normal`}>Today</Text>
             <ScrollView style={tw`mt-1 max-h-[200px]`} showsVerticalScrollIndicator={false} horizontal={false}>
             {data.filter(({today}) => today === true ).map(({name, icon, isOnline, message, messageCount, time}:any, index:number)=> {
@@ -161,4 +187,26 @@ const Chat = ({route}:any) => {
 
 export default Chat;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    flightHeaderContainer: {
+      flexDirection: "row",
+      justifyContent: "space-evenly",
+      borderBottomColor: "#80808050",
+      borderBottomWidth: 0.5,
+      color: "#E0E0E0",
+      alignItems: 'center'
+    },
+    flightHeader: {
+      color: "#2F80ED",
+      borderBottomColor: "#2F80ED",
+      borderBottomWidth: 1,
+      width: '40%',
+      borderStyle: "solid",
+      textAlign: 'center',
+      fontWeight: 'bold',
+      fontSize: 16,
+    },
+    flightNormal: {
+      color: "#E0E0E0",
+    }
+  });
