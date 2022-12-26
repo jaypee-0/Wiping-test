@@ -117,7 +117,7 @@ const Chat = ({route}:any) => {
             <ScrollView style={tw`mt-1 max-h-[200px]`} showsVerticalScrollIndicator={false} horizontal={false}>
             {data.filter(({today}) => today === true ).map(({name, icon, isOnline, message, messageCount, time}:any, index:number)=> {
                 return(                    
-                    <TouchableOpacity onPress={()=>navigation.navigate("ChatA", {name: name, pic: icon})} key={index} style={tw`flex mb-3 items-center rounded-[12px] px-4 py-3 flex-row bg-[${messageCount>0 ? '#EAEAEA': 'unset'}]`}>
+                    <TouchableOpacity onPress={()=>navigation.navigate("ChatA", {name: name, pic: icon})} key={index} style={tw`flex mb-3 items-center rounded-[12px] px-4 py-3 flex-row bg-[${messageCount>0 ? '#EAEAEA': '#F7F7F7'}]`}>
                         <View style={tw`relative mr-3`}>
                         {isOnline && <View style={tw`bg-[#06E775] h-3 w-3 rounded-full absolute -right-[5px] bottom-0 z-10`}></View>}
                         <Image source={icon} style={tw`text-[#fff] rounded-lg h-[56px] w-[54px]`} />
@@ -137,7 +137,7 @@ const Chat = ({route}:any) => {
             <ScrollView style={tw`mt-1`} showsVerticalScrollIndicator={false} horizontal={false}>
             {data.filter(({today}) => today !== true ).map(({name, icon, isOnline, message, messageCount, time}:any, index:number)=> {
                 return(                    
-                    <TouchableOpacity onPress={()=>navigation.navigate("ChatA", {name: name, pic: icon})} key={index} style={tw`flex mb-3 items-center rounded-[12px] px-4 py-3 flex-row bg-[${messageCount>0 ? '#EAEAEA': 'unset'}]`}>
+                    <TouchableOpacity onPress={()=>navigation.navigate("ChatA", {name: name, pic: icon})} key={index} style={tw`flex mb-3 items-center rounded-[12px] px-4 py-3 flex-row bg-[${messageCount>0 ? '#EAEAEA': '#F7F7F7'}]`}>
                         <View style={tw`relative mr-3`}>
                         {isOnline && <View style={tw`bg-[#06E775] h-3 w-3 rounded-full absolute -right-[5px] bottom-0 z-10`}></View>}
                         <Image source={icon} style={tw`text-[#fff] rounded-lg h-[56px] w-[54px]`} />
