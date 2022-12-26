@@ -181,6 +181,7 @@ export default function CreateAccount({ route, navigation }: any) {
                     </View>
                     <TouchableOpacity
                         disabled={isLoading}
+                        onPress={()=>navigation.navigate("BottomTabs")}
                         style={tw`mb-5 flex flex-row h-[64px] border-0 text-center rounded-[8px] justify-center items-center bg-[${!isLoading ? "#0B66FF" : "#0B66FF3a"}]`}
                     >
                         {isLoading ? <ActivityIndicator /> : <Text style={tw`flex-1 text-lg text-[#fff] text-center`}>Next</Text>}
