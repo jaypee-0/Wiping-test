@@ -10,7 +10,7 @@ import React from "react";
 const NearBy = () => {
   const navigation = useNavigation()
     return (
-        <SafeAreaView style={tw`h-[100%] px-6 text-white flex flex-col pt-[${Constants.statusBarHeight}]`}>
+        <SafeAreaView style={tw`h-[100%] bg-[#F5F5F5] px-6 text-white flex flex-col pt-[${Constants.statusBarHeight}]`}>
             <View style={tw`flex flex-row mb-10 items-center`}>
                 <TouchableOpacity onPress={() => navigation.goBack()} style={tw`mr-auto`}>
                     <AntDesign name="arrowleft" size={24} />

@@ -8,6 +8,7 @@ import { ColorSchemeName, Image, Pressable } from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
+import ChatA from '../screens/Individual/ChatA';
 import Chat from '../screens/Main/Chat';
 import Discover from '../screens/Main/Discover';
 import NearBy from '../screens/Main/NearBy';
@@ -115,6 +116,11 @@ function RootNavigator() {
           headerShown: false,
           //cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS ,       
         }}
+      />
+      <Stack.Screen
+        name="ChatA"
+        component={ChatA}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );
