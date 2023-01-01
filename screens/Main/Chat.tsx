@@ -103,7 +103,7 @@ const Chat = ({route}:any) => {
       };
 
     return (
-        <SafeAreaView style={tw`h-[100%] px-6 bg-[#F5F5F5] flex flex-col pt-[${Constants.statusBarHeight}]`}>
+        <SafeAreaView style={tw`h-[110%] px-6 bg-[#F5F5F5] flex flex-col pt-[${Constants.statusBarHeight}]`}>
             <View style={tw`flex flex-row mb-8 mx-auto`}>
                 <Text style={tw`text-[#2F80ED] text-center text-2xl font-bold`}>Chats</Text>
             </View>
@@ -194,7 +194,8 @@ const styles = StyleSheet.create({
       borderBottomColor: "#80808050",
       borderBottomWidth: 0.5,
       color: "#E0E0E0",
-      alignItems: 'center'
+      marginTop: 12,
+      alignItems: 'center',
     },
     flightHeader: {
       color: "#2F80ED",
