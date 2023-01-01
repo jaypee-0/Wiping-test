@@ -41,7 +41,7 @@ function BottomTabNavigator() {
     <BottomTab.Navigator
       initialRouteName='Discover'
       screenOptions={{
-      tabBarStyle: { position: 'relative', height: 60, borderTopRightRadius: 20, borderTopLeftRadius: 20, borderTopColor: '#D9D9D9', width: '100%', borderTopWidth: 0.2 },
+      tabBarStyle: { position: 'relative', minHeight: 60, borderTopColor: '#D9D9D9', width: '100%', borderTopWidth: 0.2, paddingTop: 10, backgroundColor: '#fff' },
       tabBarActiveBackgroundColor: '#fff',
       tabBarInactiveBackgroundColor: '#fff',
       tabBarLabelStyle: {paddingBottom: 10, fontSize: 12, borderColor: 'unset', borderWidth: 0},
