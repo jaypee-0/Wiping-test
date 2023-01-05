@@ -4,7 +4,7 @@ import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { CardStyleInterpolators } from '@react-navigation/stack';
 import * as React from 'react';
-import { ColorSchemeName, Image, Pressable } from 'react-native';
+import { ColorSchemeName, Image, Dimensions } from 'react-native';
 import ChatIcon from '../components/icons/ChatIcon';
 import DiscoverIcon from '../components/icons/DiscoverIcon';
 import NearByIcon from '../components/icons/NearByIcon';
@@ -37,14 +37,16 @@ export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeNa
 const BottomTab = createBottomTabNavigator<RootTabParamList>();
 function BottomTabNavigator() {
   const colorScheme = useColorScheme();
+  const screenHeight = Math.round(Dimensions.get('window').height);
+  console.log(screenHeight)
   return (
     <BottomTab.Navigator
       initialRouteName='Discover'
       screenOptions={{
-      tabBarStyle: { position: 'relative', minHeight: 60, borderTopColor: '#D9D9D9', width: '100%', borderTopWidth: 0.2, paddingTop: 10, backgroundColor: '#fff' },
+      tabBarStyle: { position: 'relative', minHeight: screenHeight>715?90:60, borderTopColor: '#D9D9D9', width: '100%', borderTopWidth: 0.2, paddingTop: 18, backgroundColor: '#fff' },
       tabBarActiveBackgroundColor: '#fff',
       tabBarInactiveBackgroundColor: '#fff',
-      tabBarLabelStyle: {paddingBottom: 10, fontSize: 12, borderColor: 'unset', borderWidth: 0},
+      tabBarLabelStyle: {paddingBottom: 8, paddingTop: screenHeight>715?15:13, fontSize: 12, borderColor: 'unset', borderWidth: 0},
       tabBarActiveTintColor: '#2F80ED',
       tabBarInactiveTintColor: '#8D8E96',
      }}
