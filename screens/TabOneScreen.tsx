@@ -47,34 +47,37 @@ export default function CreateAccount({ route, navigation }: any) {
                     <Text style={tw`text-[#808080] text-[16px] mb-2 w-[80%]`}>Full Name</Text>
                     <View style={tw`w-full flex flex-row rounded-[10px] pl-4 py-5 bg-[#F5F5F5]`}>
                         <TextInput
-                            placeholderTextColor="#35377B"
+                            placeholderTextColor="#80808040"
                             onChangeText={(text: string): void => {
                                 setfullname(text);
                             }}
                             style={tw`text-[#000]`}
-                            value={fullname}
+                            value={fullname}                  
+                            placeholder="John Doe"
                         />
                     </View>
                     <Text style={tw`text-[#808080] text-[16px] mb-2 w-[80%] mt-5`}>Phone Number</Text>
                     <View style={tw`w-full flex flex-row rounded-[10px] pl-4 py-5 bg-[#F5F5F5]`}>
                         <TextInput
-                            placeholderTextColor="#35377B"
+                            placeholderTextColor="#80808040"
                             onChangeText={(text: string): void => {
                                 setphonenumber(text);
                             }}
                             style={tw`text-[#000]`}
-                            value={phonenumber}
+                            value={phonenumber}          
+                            placeholder="00000000000"
                         />
                     </View>
                     <Text style={tw`text-[#808080] mb-2 text-[16px] w-[80%] mt-5`}>Email Address</Text>
                     <View style={tw`w-full flex flex-row rounded-[10px] pl-4 py-5 bg-[#F5F5F5]`}>
                         <TextInput
-                            placeholderTextColor="#35377B"
+                            placeholderTextColor="#80808040"
                             onChangeText={(text: string): void => {
                                 setEmail(text);
                             }}
                             style={tw`text-[#000]`}
-                            value={email}
+                            value={email}          
+                            placeholder="johndoe@gmail.com"
                         />
                     </View>
                     {/* Date of birth */}
@@ -82,7 +85,7 @@ export default function CreateAccount({ route, navigation }: any) {
                     <View style={tw`w-full flex flex-row justify-between`}>
                         <View style={tw`w-[31%] flex flex-row rounded-[10px] pl-4 py-5 bg-[#F5F5F5]`}>
                             <TextInput
-                                placeholderTextColor="#80808070"
+                                placeholderTextColor="#80808040"
                                 onChangeText={(text: string): void => {
                                     setday(text);
                                 }}
@@ -147,6 +150,7 @@ export default function CreateAccount({ route, navigation }: any) {
                             value={password}
                             placeholderTextColor="#35377B"                            
                             secureTextEntry={showPassword}
+                            placeholder="********"                                      
                         />
 
                         <View style={tw`underline text-[13px] font-semibold text-[#fff] ml-auto mr-4`}>
@@ -163,6 +167,7 @@ export default function CreateAccount({ route, navigation }: any) {
                             value={cpassword}
                             placeholderTextColor="#35377B"                            
                             secureTextEntry={showPassword}
+                            placeholder="********"
                         />
 
                         <View style={tw`underline text-[13px] font-semibold text-[#fff] ml-auto mr-4`}>
